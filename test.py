@@ -22,6 +22,7 @@ def filt(words, modify):
     return res
 def readwords(path):
     Words = []
+    print(path)
     with open(path) as f:
         for line in f.readlines():
             items = line.split(' ') 
@@ -29,9 +30,15 @@ def readwords(path):
             Words += items
     return Words
 
-wordspath = '/home/yyy/ML/dataset/data.txt'
+pathpattern = '/home/yyy/ML/dataset/data%d.txt'
+wordspaths = [pathpattern%i for i in range(7)]
+print(wordspaths)
 exceptpath = '/home/yyy/ML/dataset/except.txt'
-Words = readwords(wordspath)
+Words = []
+for path in wordspaths:
+    print(path)
+    Words += readwords(path)
+
 Except = readwords(exceptpath)
 Words = [w.lower() for w in Words if w.lower() not in Except ]
 Words = [lemma(w) for w in Words if lemma(w) not in Except]
