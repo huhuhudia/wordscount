@@ -1,5 +1,5 @@
-## from 1980-2018 考研英语一 4500常见词筛除
-
+## from 1980-2018 Graduate English 1 test filter though 4500 most frequently used words 
+### total words: 169469 
 ### Times: 1
 | index | words | url |
 | ------------ | ------------ | ------------ |

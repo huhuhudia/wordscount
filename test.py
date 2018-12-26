@@ -1,3 +1,5 @@
+#/usr/bin/env python
+# -*- coding: UTF-8 -*-
 from pattern.en import lemma
 Words = []
 A2Z = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -38,7 +40,7 @@ Words = []
 for path in wordspaths:
     print(path)
     Words += readwords(path)
-
+COUNTN = len(Words)
 Except = readwords(exceptpath)
 Words = [w.lower() for w in Words if w.lower() not in Except ]
 Words = [lemma(w) for w in Words if lemma(w) not in Except]
@@ -85,4 +87,6 @@ with open('frequency.md','w+') as f:
         if len(Rank[i]) == 0:
             continue
         res += "### Times: " + str(i) + '\n' + make_trans_table(Rank[i])
+
+    res = u'## from 1980-2018 Graduate English 1 test filter though 4500 most frequently used words \n### total words: %d \n'%COUNTN+ res
     f.write(res)
