@@ -71,8 +71,11 @@ def make_trans_table(data):
     return res+lines+'\n\n\n'+ DIVIDING
 DIVIDING = '\n------------\n'
 
+# print(make_trans_table(Rank[1]))
 with open('frequency.md','w+') as f:
     res = ''
     for i in range(len(Rank)):
+        if len(Rank[i]) == 0:
+            continue
         res += "### Times: " + str(i+1) + '\n' + make_trans_table(Rank[i])
     f.write(res)
