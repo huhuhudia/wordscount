@@ -77,5 +77,5 @@ with open('frequency.md','w+') as f:
     for i in range(len(Rank)):
         if len(Rank[i]) == 0:
             continue
-        res += "### Times: " + str(i+1) + '\n' + make_trans_table(Rank[i])
+        res += "### Times: " + str(i) + '\n' + make_trans_table(Rank[i])
     f.write(res)
