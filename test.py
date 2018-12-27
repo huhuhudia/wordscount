@@ -86,7 +86,10 @@ with open('frequency.md','w+') as f:
     for i in range(len(Rank)):
         if len(Rank[i]) == 0:
             continue
-        res += "### Times: " + str(i) + '\n' + make_trans_table(Rank[i])
+        content = "### Times: " + str(i) + '\n' + make_trans_table(Rank[i])
+        with open('details/frequency-%d.md'%i, 'w+') as _f:
+            _f.write(content)
+        res += content
 
     res = u'## from 1980-2018 Graduate English 1 test filter though 4500 most frequently used words \n### total words: %d \n'%COUNTN+ res
     f.write(res)
