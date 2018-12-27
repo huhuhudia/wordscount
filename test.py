@@ -87,7 +87,7 @@ with open('frequency.md','w+') as f:
         if len(Rank[i]) == 0:
             continue
         content = "### Times: " + str(i) + '\n' + make_trans_table(Rank[i])
-        with open('details/frequency-%3d.md'%i, 'w+') as _f:
+        with open('details/frequency-[%03d].md'%i, 'w+') as _f:
             _f.write(content)
         res += content
 
