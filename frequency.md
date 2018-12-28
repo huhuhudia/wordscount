@@ -1,3 +1,4 @@
+[TOC]
 ## from 1980-2018 Graduate English 1 test filter though 4500 most frequently used words 
 ### total words: 169469 
 ### Times: 1
